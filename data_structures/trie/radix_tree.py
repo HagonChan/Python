@@ -70,6 +70,8 @@ class RadixNode:
         # Case 2: The node has no edges that have a prefix to the word
         # Solution: We create an edge from the current node to a new one
         # containing the word
+        elif not word:
+            return
         elif word[0] not in self.nodes:
             self.nodes[word[0]] = RadixNode(prefix=word, is_leaf=True)
 
